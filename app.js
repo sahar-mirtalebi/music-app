@@ -14,7 +14,7 @@ fs.readdir('./music/', function(err,files) {
                         duration:"",
                         pic:""
                     }
-        var parser = new mm(fs.createReadStream('./music/'+i));
+        var parser = new mm(fs.createReadStream('./music/'+files[i]));
         parser.on('title', function(result) {
             jsonSong.title = result;
         });
