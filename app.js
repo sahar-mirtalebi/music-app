@@ -3,6 +3,8 @@ var mm = require('musicmetadata');
 
 fs.readdir('./music/', function(err,files) {
     if(err) throw err;
+	
+	/*
     var jsonObj = {
                     songs: []
                 };
@@ -32,6 +34,19 @@ fs.readdir('./music/', function(err,files) {
 
     };
     console.log(jsonObj);
+	
+	*/
+	
+	for(var i=0; i<files.length; i++){
+	
+	var parser = mm(fs.createReadStream('./music/'+files[i]), function (error, metadata) {
+		if (error) {
+			console.log(error);
+		}
+		
+		console.log(metadata)
+	});
+	}
 });
 
 
