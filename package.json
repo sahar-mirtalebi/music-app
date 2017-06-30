@@ -1,0 +1,19 @@
+{
+  "name": "music-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.15.3",
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
+    "mp3-parser": "^0.3.0",
+    "musicmetadata": "^2.0.5",
+    "node-json-db": "^0.7.3"
+  }
+}
