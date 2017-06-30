@@ -6,14 +6,15 @@ fs.readdir('./music/', function(err,files) {
     var jsonObj = {
                     songs: []
                 };
-    files.forEach(function(file){
+    for(var i=0; i<files.length; i++){
+    	console.log(files[i])
         var jsonSong = { 
                         title:"",
                         artist:"",
                         duration:"",
                         pic:""
                     }
-        var parser = new mm(fs.createReadStream('./music/'+file));
+        var parser = new mm(fs.createReadStream('./music/'+i));
         parser.on('title', function(result) {
             jsonSong.title = result;
         });
@@ -29,7 +30,7 @@ fs.readdir('./music/', function(err,files) {
 
         jsonObj.songs.push(jsonSong);
 
-    });
+    };
     console.log(jsonObj);
 });
 
